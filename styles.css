@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #0c2532, #183b4e);
+}
+
+.snowfall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('snowflake.png') repeat;
+    animation: snowfallAnimation 10s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes snowfallAnimation {
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.card {
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+h1 {
+    color: #e74c3c;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #3498db;
+    font-size: 1.2em;
+}
+
+#lights-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.light {
+    width: 20px;
+    height: 20px;
+    background-color: #f1c40f;
+    border-radius: 50%;
+    margin: 0 10px;
+    animation: twinklingLights 1s infinite alternate;
+}
+
+@keyframes twinklingLights {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+        background-color: #f39c12;
+    }
+}
+
+#snowflakes-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
